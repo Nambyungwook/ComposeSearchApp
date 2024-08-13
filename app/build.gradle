@@ -3,7 +3,6 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("dagger.hilt.android.plugin")
     id("com.google.devtools.ksp")
-    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -51,6 +50,13 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:data"))
+    implementation(project(":core:designsystem"))
+    implementation(project(":feature:main"))
+    implementation(project(":feature:search"))
+    implementation(project(":feature:favorite"))
+    implementation(project(":feature:detail"))
+
     implementation "androidx.core:core-ktx:1.13.1"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.8.4"
     implementation "androidx.activity:activity-compose:1.9.1"
@@ -63,41 +69,10 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-tooling"
     debugImplementation "androidx.compose.ui:ui-test-manifest"
 
-    // Okhttp
-    implementation "com.squareup.okhttp3:okhttp:4.12.0"
-    implementation "com.squareup.okhttp3:logging-interceptor:4.12.0"
-
-    // Retrofit
-    implementation "com.squareup.retrofit2:retrofit:2.11.0"
-    implementation "com.squareup.retrofit2:converter-gson:2.11.0"
-
-    // Gson
-    implementation "com.google.code.gson:gson:2.10.1"
-
-    // Serialization
-    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0"
-
-    // Compose Navigation
-    implementation "androidx.navigation:navigation-compose:2.7.7"
-
-    // Compose Paging
-    implementation "androidx.paging:paging-compose:3.3.2"
-
-    // Room
-    implementation "androidx.room:room-runtime:2.6.1"
-    implementation "androidx.room:room-ktx:2.6.1"
-    ksp "androidx.room:room-compiler:2.6.1"
-
-    // Room Paging
-    implementation "androidx.room:room-paging:2.6.1"
-
     // Hilt
     implementation "com.google.dagger:hilt-android:2.51.1"
     ksp "com.google.dagger:hilt-compiler:2.51.1"
     implementation "androidx.hilt:hilt-navigation-compose:1.2.0"
-
-    // Coil
-    implementation "io.coil-kt:coil-compose:2.4.0"
 
     // Test
     testImplementation "junit:junit:4.13.2"
