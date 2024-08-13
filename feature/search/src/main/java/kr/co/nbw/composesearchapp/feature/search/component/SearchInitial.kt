@@ -24,7 +24,7 @@ fun SearchInitial() {
 @Preview
 @Composable
 fun SearchInitialPreview() {
-    kr.co.nbw.composesearchapp.core.designsystem.theme.ComposeSearchAppTheme {
+    ComposeSearchAppTheme {
         SearchInitial()
     }
 }
