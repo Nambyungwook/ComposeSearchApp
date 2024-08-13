@@ -50,7 +50,7 @@ class FavoriteViewModel @Inject constructor(
                 is ResultWrapper.Success -> {
                     _favoriteUiEffect.emit(FavoriteUiEffect.ShowSnackBar("Book deleted"))
                     // TODO:: 이 부분이 필요한가?
-                    getFavoriteBooks()
+//                    getFavoriteBooks()
                 }
 
                 is ResultWrapper.Error -> {
