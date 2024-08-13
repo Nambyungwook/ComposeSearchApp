@@ -15,7 +15,7 @@ import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
@@ -42,8 +42,7 @@ fun SearchScreen(
     onClickDeleteBook: (BookEntity) -> Unit,
     onClickGetFavoriteBooks: () -> Unit
 ) {
-    // TODO:: 검색창에 입력한 텍스트를 저장하는 State를 State Hoisting으로 구현해야함
-    val (getQuery, setQuery) = remember { mutableStateOf("") }
+    val (getQuery, setQuery) = rememberSaveable { mutableStateOf("") }
     val keyboardController = LocalSoftwareKeyboardController.current
 
     Column(
